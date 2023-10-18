@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Thuraaung\Namespace\Tests;
+namespace Thuraaung\APIUtils\Tests;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
@@ -12,9 +12,7 @@ final class TestCase extends BaseTestCase
 {
     protected function getPackageProviders($app): array
     {
-        return [
-
-        ];
+        return [];
     }
 
     /**
@@ -23,8 +21,6 @@ final class TestCase extends BaseTestCase
      */
     protected function getPackageAliases($app): array
     {
-        return [
-
-        ];
+        return [];
     }
 }

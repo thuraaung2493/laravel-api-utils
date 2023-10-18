@@ -1,6 +1,6 @@
 {
-  "name": "thuraaung2493/package-name",
-  "description": "Package description.",
+  "name": "thuraaung2493/larave-api-utils",
+  "description": "Laravel API Utils.",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -13,16 +13,17 @@
   ],
   "autoload": {
     "psr-4": {
-      "Thuraaung\\Namespace\\": "src/"
+      "Thuraaung\\APIUtils\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Thuraaung\\Namespace\\Tests\\": "tests/"
+      "Thuraaung\\APIUtils\\Tests\\": "tests/"
     }
   },
   "require": {
     "php": "^8.2",
+    "illuminate/support": "*",
     "nunomaduro/mock-final-classes": "^1.2"
   },
   "require-dev": {
