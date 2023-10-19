@@ -23,16 +23,15 @@ it('can create a Json Response', function (): void {
     $response = (new MessageOnlyResponse('Success Message.'))
         ->toResponse(Request::create('/'));
 
-    expect(
-        $response,
-    )->toBeInstanceOf(JsonResponse::class)->and(
-        $response->status(),
-    )->toEqual(Status::OK->value)->and(
-        $response->headers->all(),
-    )->toBeArray()->and(
-        json_decode($response->getContent())
-    )->toMatchObject([
-        'message' => 'Success Message.',
-        'status' => Status::OK->value,
-    ]);
+    expect($response)
+        ->toBeInstanceOf(JsonResponse::class)
+        ->and($response->status())
+        ->toEqual(Status::OK->value)
+        ->and($response->headers->all())
+        ->toBeArray()
+        ->and($response->getData())
+        ->toMatchObject([
+            'message' => 'Success Message.',
+            'status' => Status::OK->value,
+        ]);
 });

@@ -71,7 +71,7 @@ final class Response
     public function sendMessage(string|null $message = null): MessageOnlyResponse
     {
         return new MessageOnlyResponse(
-            message: $message ?? $this->message,
+            message: $message ?? $this->message ?? 'Success.',
             status: $this->status ?? Status::OK,
         );
     }
