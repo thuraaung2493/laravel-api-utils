@@ -24,13 +24,15 @@
   "require": {
     "php": "^8.2",
     "illuminate/support": "*",
-    "nunomaduro/mock-final-classes": "^1.2"
+    "nunomaduro/mock-final-classes": "^1.2",
+    "thecodingmachine/safe": "^2.5"
   },
   "require-dev": {
     "laravel/pint": "^1.10",
     "nunomaduro/larastan": "^2.0",
     "orchestra/testbench": "^8.5",
-    "pestphp/pest": "^2.6"
+    "pestphp/pest": "^2.6",
+    "thecodingmachine/phpstan-safe-rule": "^1.2"
   },
   "config": {
     "sort-packages": true,

@@ -8,7 +8,18 @@ use Illuminate\Support\ServiceProvider;
 
 final class APIServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function register(): void
     {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../../config/api-utils.php',
+            'api-utils'
+        );
+    }
+
+    public function boot(): void
+    {
+        $this->publishes([
+            __DIR__ . '/../../config/api-utils.php' => config_path('api-utils.php'),
+        ]);
     }
 }

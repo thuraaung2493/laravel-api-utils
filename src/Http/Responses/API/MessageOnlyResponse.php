@@ -28,7 +28,7 @@ final class MessageOnlyResponse implements Responsable
      * Create an HTTP response that represents the object.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function toResponse($request): JsonResponse
     {
