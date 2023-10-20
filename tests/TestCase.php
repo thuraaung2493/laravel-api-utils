@@ -7,12 +7,15 @@ namespace Thuraaung\APIUtils\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Thuraaung\APIUtils\LaravelAPIUtilsServiceProvider;
 
 final class TestCase extends BaseTestCase
 {
     protected function getPackageProviders($app): array
     {
-        return [];
+        return [
+            LaravelAPIUtilsServiceProvider::class
+        ];
     }
 
     /**

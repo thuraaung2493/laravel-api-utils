@@ -8,6 +8,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Contracts\Support\Responsable;
 use Thuraaung\APIUtils\Http\Responses\Status;
 
+use function response;
+
 /**
  * A JSON Response Format for API Messages Only
  *
@@ -28,11 +30,11 @@ final class MessageOnlyResponse implements Responsable
      * Create an HTTP response that represents the object.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function toResponse($request): JsonResponse
     {
-        return \response()->json(
+        return response()->json(
             data: [
                 'message' => $this->message,
                 'status' => $this->status->value,

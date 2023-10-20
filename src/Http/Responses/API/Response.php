@@ -18,7 +18,7 @@ final class Response
 
     private Status|null $status;
 
-    public static function of()
+    public static function of(): self
     {
         return new self();
     }

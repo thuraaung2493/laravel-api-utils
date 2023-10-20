@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Thuraaung\APIUtils\Http\Responses\Status;
 
-test('Status Enum Class', function () {
+test('Status Enum Class', function (): void {
     expect(Status::class)->toBeEnum();
 
     expect(count(Status::cases()))->toBe(61);

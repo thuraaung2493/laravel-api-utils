@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 use Thuraaung\APIUtils\Http\Responses\API\FailResponse;
 use Thuraaung\APIUtils\Http\Responses\Status;
 
