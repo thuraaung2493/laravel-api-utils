@@ -6,12 +6,12 @@ namespace Thuraaung\APIUtils;
 
 use Illuminate\Support\ServiceProvider;
 
-final class APIServiceProvider extends ServiceProvider
+final class LaravelAPIUtilsServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../../config/api-utils.php',
+            __DIR__ . '/../config/api-utils.php',
             'api-utils'
         );
     }
@@ -19,7 +19,7 @@ final class APIServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../../config/api-utils.php' => config_path('api-utils.php'),
+            __DIR__ . '/../config/api-utils.php' => config_path('api-utils.php'),
         ]);
     }
 }
