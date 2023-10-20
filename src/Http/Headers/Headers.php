@@ -16,7 +16,7 @@ final class Headers implements Arrayable
     /**
      * @param Collection<string, mixed> $headers
      */
-    public function __construct(
+    private function __construct(
         private Collection $headers,
     ) {
     }
