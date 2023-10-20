@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Thuraaung\APIUtils\Http\Headers\Enums\ContentType;
 
-test('ContentType Enum Class', function () {
+test('ContentType Enum Class', function (): void {
     expect(ContentType::class)->toBeEnum();
 
     expect(ContentType::cases())->toHaveLength(2);

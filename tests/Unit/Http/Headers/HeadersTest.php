@@ -6,7 +6,7 @@ use Thuraaung\APIUtils\Http\Headers\Enums\ContentEncoding;
 use Thuraaung\APIUtils\Http\Headers\Enums\ContentType;
 use Thuraaung\APIUtils\Http\Headers\Headers;
 
-describe('Headers', function () {
+describe('Headers', function (): void {
     test('of()', function (): void {
         expect(Headers::of())
             ->toBeInstanceOf(Headers::class)
@@ -92,6 +92,20 @@ describe('Headers', function () {
             ->toMatchArray([
                 'Content-Type' => 'application/json',
             ]);
+    });
+
+    test('isEmpty()', function (): void {
+        $headers = Headers::of();
+
+        expect($headers)
+            ->toBeInstanceOf(Headers::class);
+
+        expect($headers->isEmpty())
+            ->toBeTrue();
+
+        expect($headers->contentType(ContentType::JSON)
+            ->isEmpty())
+            ->toBeFalse();
     });
 
     test('toArray()', function (): void {

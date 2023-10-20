@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Thuraaung\APIUtils\Http\Method;
 
-test('Method Enum Class', function () {
+test('Method Enum Class', function (): void {
     expect(Method::class)->toBeEnum();
 
     expect(Method::cases())->toHaveLength(8);

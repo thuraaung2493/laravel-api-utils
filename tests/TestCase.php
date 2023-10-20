@@ -7,8 +7,6 @@ namespace Thuraaung\APIUtils\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentEncoding;
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentType;
 use Thuraaung\APIUtils\LaravelAPIUtilsServiceProvider;
 
 final class TestCase extends BaseTestCase

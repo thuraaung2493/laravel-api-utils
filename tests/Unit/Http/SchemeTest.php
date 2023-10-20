@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Thuraaung\APIUtils\Http\Scheme;
 
-test('Scheme Enum Class', function () {
+test('Scheme Enum Class', function (): void {
     expect(Scheme::class)->toBeEnum();
 
     expect(Scheme::cases())->toHaveLength(2);

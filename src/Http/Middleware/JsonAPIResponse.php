@@ -25,17 +25,17 @@ final class JsonAPIResponse
         /** @var Response */
         $response = $next($request);
 
-        $headers = Headers::default()->toArray();
+        $headers = Headers::default();
 
-        if (\count($headers) === 0) {
+        if ($headers->isEmpty()) {
             $headers = Headers::of()
                 ->accept(ContentType::JSON)
                 ->contentType(ContentType::JSON);
         }
 
-        if ($request->isJson() && !$this->isImageContentType($response)) {
+        if ($request->isJson() && ! $this->isImageContentType($response)) {
             $response->headers->add(
-                headers: $headers,
+                headers: $headers->toArray(),
             );
         }
 

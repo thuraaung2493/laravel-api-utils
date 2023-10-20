@@ -21,6 +21,9 @@ final class Headers implements Arrayable
     ) {
     }
 
+    /**
+     * Create default headers.
+     */
     public static function default(): self
     {
         return new Headers(
@@ -28,6 +31,9 @@ final class Headers implements Arrayable
         );
     }
 
+    /**
+     * Create empty headers.
+     */
     public static function of(): self
     {
         return new Headers(
@@ -35,6 +41,9 @@ final class Headers implements Arrayable
         );
     }
 
+    /**
+     * Create Accept header type.
+     */
     public function accept(ContentType $type): self
     {
         $this->headers->put('Accept', $type);
@@ -42,6 +51,9 @@ final class Headers implements Arrayable
         return $this;
     }
 
+    /**
+     * Create Accept-Encoding header type.
+     */
     public function acceptEncoding(ContentEncoding $encoding): self
     {
         $this->headers->put('Accept-Encoding', $encoding);
@@ -49,6 +61,9 @@ final class Headers implements Arrayable
         return $this;
     }
 
+    /**
+     * Create Content-Encoding header type.
+     */
     public function contentEncoding(ContentEncoding $encoding, bool $vapor = true): self
     {
         $this->headers->put('Content-Encoding', $encoding);
@@ -60,6 +75,9 @@ final class Headers implements Arrayable
         return $this;
     }
 
+    /**
+     * Create Content-Length header type.
+     */
     public function contentLength(int $length): self
     {
         $this->headers->put('Content-Length', $length);
@@ -67,6 +85,9 @@ final class Headers implements Arrayable
         return $this;
     }
 
+    /**
+     * Create Content-Type header type.
+     */
     public function contentType(ContentType $type): self
     {
         $this->headers->put('Content-Type', $type);
@@ -74,7 +95,18 @@ final class Headers implements Arrayable
         return $this;
     }
 
-    public function toArray()
+    /**
+     * Check headers are empty.
+     */
+    public function isEmpty(): bool
+    {
+        return 0 === $this->headers->count();
+    }
+
+    /**
+     * Return all headers.
+     */
+    public function toArray(): array
     {
         return $this->headers->map(function (mixed $value) {
             if ($value instanceof BackedEnum) {

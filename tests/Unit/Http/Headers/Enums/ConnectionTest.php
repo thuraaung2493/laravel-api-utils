@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Thuraaung\APIUtils\Http\Headers\Enums\Connection;
 
-test('Connection Enum Class', function () {
+test('Connection Enum Class', function (): void {
     expect(Connection::class)->toBeEnum();
 
     expect(Connection::cases())->toHaveLength(2);

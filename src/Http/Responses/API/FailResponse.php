@@ -9,6 +9,8 @@ use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Thuraaung\APIUtils\Http\Responses\Status;
 
+use function response;
+
 /**
  * A JSON Response Format for API Errors
  *
@@ -37,7 +39,7 @@ final class FailResponse implements Responsable
      */
     public function toResponse($request): JsonResponse
     {
-        return \response()->json(
+        return response()->json(
             data: [
                 'title' => $this->title,
                 'message' => $this->message,

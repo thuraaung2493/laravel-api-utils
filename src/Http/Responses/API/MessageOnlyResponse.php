@@ -8,6 +8,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Contracts\Support\Responsable;
 use Thuraaung\APIUtils\Http\Responses\Status;
 
+use function response;
+
 /**
  * A JSON Response Format for API Messages Only
  *
@@ -32,7 +34,7 @@ final class MessageOnlyResponse implements Responsable
      */
     public function toResponse($request): JsonResponse
     {
-        return \response()->json(
+        return response()->json(
             data: [
                 'message' => $this->message,
                 'status' => $this->status->value,
