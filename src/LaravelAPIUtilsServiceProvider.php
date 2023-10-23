@@ -18,8 +18,11 @@ final class LaravelAPIUtilsServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->publishes([
-            __DIR__ . '/../config/api-utils.php' => config_path('api-utils.php'),
-        ]);
+        $this->publishes(
+            [
+                __DIR__ . '/../config/api-utils.php' => config_path('api-utils.php'),
+            ],
+            groups: 'api-utils',
+        );
     }
 }
