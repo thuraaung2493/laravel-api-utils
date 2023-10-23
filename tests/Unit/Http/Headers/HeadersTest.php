@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentEncoding;
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentType;
+use Thuraaung\APIUtils\Http\Headers\ContentEncoding;
+use Thuraaung\APIUtils\Http\Headers\ContentType;
 use Thuraaung\APIUtils\Http\Headers\Headers;
 
-describe('Headers', function (): void {
-    test('of()', function (): void {
+describe('Headers::class', function (): void {
+    test('of', function (): void {
         expect(Headers::of())
             ->toBeInstanceOf(Headers::class)
             ->toHaveMethods([
@@ -20,7 +20,7 @@ describe('Headers', function (): void {
             ]);
     });
 
-    test('default()', function (): void {
+    test('default', function (): void {
         expect(Headers::default())
             ->toBeInstanceOf(Headers::class)
             ->toHaveMethods([
@@ -33,7 +33,7 @@ describe('Headers', function (): void {
             ]);
     });
 
-    test('accept()', function (): void {
+    test('accept', function (): void {
         $headers = Headers::of()->accept(ContentType::JSON);
 
         expect($headers)
@@ -45,7 +45,7 @@ describe('Headers', function (): void {
             ]);
     });
 
-    test('acceptEncoding()', function (): void {
+    test('acceptEncoding', function (): void {
         $headers = Headers::of()->acceptEncoding(ContentEncoding::GZIP);
 
         expect($headers)
@@ -57,7 +57,7 @@ describe('Headers', function (): void {
             ]);
     });
 
-    test('contentEncoding()', function (): void {
+    test('contentEncoding', function (): void {
         $headers = Headers::of()->contentEncoding(ContentEncoding::GZIP);
 
         expect($headers)
@@ -70,7 +70,7 @@ describe('Headers', function (): void {
             ]);
     });
 
-    test('contentLength()', function (): void {
+    test('contentLength', function (): void {
         $headers = Headers::of()->contentLength(216);
 
         expect($headers)
@@ -82,7 +82,7 @@ describe('Headers', function (): void {
             ]);
     });
 
-    test('contentType()', function (): void {
+    test('contentType', function (): void {
         $headers = Headers::of()->contentType(ContentType::JSON);
 
         expect($headers)
@@ -94,7 +94,7 @@ describe('Headers', function (): void {
             ]);
     });
 
-    test('isEmpty()', function (): void {
+    test('isEmpty', function (): void {
         $headers = Headers::of();
 
         expect($headers)
@@ -108,7 +108,7 @@ describe('Headers', function (): void {
             ->toBeFalse();
     });
 
-    test('toArray()', function (): void {
+    test('toArray', function (): void {
         $headers = Headers::of()
             ->accept(ContentType::JSON)
             ->acceptEncoding(ContentEncoding::GZIP)

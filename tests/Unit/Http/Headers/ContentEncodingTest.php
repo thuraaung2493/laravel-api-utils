@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentEncoding;
+use Thuraaung\APIUtils\Http\Headers\ContentEncoding;
 
 test('ContentEncoding Enum Class', function (): void {
     expect(ContentEncoding::class)->toBeEnum();
