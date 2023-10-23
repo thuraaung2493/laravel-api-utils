@@ -34,6 +34,13 @@
     "pestphp/pest": "^2.6",
     "thecodingmachine/phpstan-safe-rule": "^1.2"
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Thuraaung\\APIUtils\\LaravelAPIUtilsServiceProvider"
+      ]
+    }
+  },
   "config": {
     "sort-packages": true,
     "optimize-autoloader": true,
