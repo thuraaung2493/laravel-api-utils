@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentEncoding;
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentType;
+use Thuraaung\APIUtils\Http\Headers\ContentEncoding;
+use Thuraaung\APIUtils\Http\Headers\ContentType;
 
 return [
     'headers' => [

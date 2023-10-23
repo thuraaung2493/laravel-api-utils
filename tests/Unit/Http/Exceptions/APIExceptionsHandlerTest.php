@@ -19,57 +19,57 @@ test('APIExceptionsHandler')
     ->toHaveMethod('toResponse')
     ->toHaveMethod('isJsonRequest');
 
-describe('APIExceptionsHandler::class', function () {
-    test('handleAuthenticationException', function () {
+describe('APIExceptionsHandler::class', function (): void {
+    test('handleAuthenticationException', function (): void {
         $handler = new Handler(app());
 
         expect($handler->handleAuthenticationException())
             ->toBeInstanceOf(Handler::class);
     });
 
-    test('handleAccessDeniedException', function () {
+    test('handleAccessDeniedException', function (): void {
         $handler = new Handler(app());
 
         expect($handler->handleAccessDeniedException())
             ->toBeInstanceOf(Handler::class);
     });
 
-    test('handleNotFoundException', function () {
+    test('handleNotFoundException', function (): void {
         $handler = new Handler(app());
 
         expect($handler->handleNotFoundException())
             ->toBeInstanceOf(Handler::class);
     });
 
-    test('handleMethodNotAllowException', function () {
+    test('handleMethodNotAllowException', function (): void {
         $handler = new Handler(app());
 
         expect($handler->handleMethodNotAllowException())
             ->toBeInstanceOf(Handler::class);
     });
 
-    test('handleNotAcceptableException', function () {
+    test('handleNotAcceptableException', function (): void {
         $handler = new Handler(app());
 
         expect($handler->handleNotAcceptableException())
             ->toBeInstanceOf(Handler::class);
     });
 
-    test('handleUnprocessableEntityException', function () {
+    test('handleUnprocessableEntityException', function (): void {
         $handler = new Handler(app());
 
         expect($handler->handleUnprocessableEntityException())
             ->toBeInstanceOf(Handler::class);
     });
 
-    test('handleTooManyRequestsException', function () {
+    test('handleTooManyRequestsException', function (): void {
         $handler = new Handler(app());
 
         expect($handler->handleTooManyRequestsException())
             ->toBeInstanceOf(Handler::class);
     });
 
-    test('handleMergeExceptions', function () {
+    test('handleMergeExceptions', function (): void {
         $handler = new Handler(app());
 
         expect($handler->handleMergeExceptions([]))
@@ -77,7 +77,7 @@ describe('APIExceptionsHandler::class', function () {
     });
 });
 
-class Handler extends APIExceptionsHandler
+final class Handler extends APIExceptionsHandler
 {
     protected function isJsonRequest(): bool
     {

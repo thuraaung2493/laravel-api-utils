@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Thuraaung\APIUtils\Exceptions;
+namespace Thuraaung\APIUtils\Exceptions\Concerns;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;

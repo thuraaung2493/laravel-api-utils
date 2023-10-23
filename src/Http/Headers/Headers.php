@@ -7,8 +7,6 @@ namespace Thuraaung\APIUtils\Http\Headers;
 use BackedEnum;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentType;
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentEncoding;
 
 /** @implements Arrayable<String, mixed> */
 final class Headers implements Arrayable

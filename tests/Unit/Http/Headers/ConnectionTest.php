@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Thuraaung\APIUtils\Http\Headers\Enums\Connection;
+use Thuraaung\APIUtils\Http\Headers\Connection;
 
 test('Connection Enum Class', function (): void {
     expect(Connection::class)->toBeEnum();

@@ -7,7 +7,7 @@ namespace Thuraaung\APIUtils\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentEncoding;
+use Thuraaung\APIUtils\Http\Headers\ContentEncoding;
 use Thuraaung\APIUtils\Http\Headers\Headers;
 
 use function Safe\gzencode;

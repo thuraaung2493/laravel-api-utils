@@ -8,7 +8,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Str;
-use Thuraaung\APIUtils\Http\Headers\Enums\ContentType;
+use Thuraaung\APIUtils\Http\Headers\ContentType;
 use Thuraaung\APIUtils\Http\Headers\Headers;
 
 use function explode;
