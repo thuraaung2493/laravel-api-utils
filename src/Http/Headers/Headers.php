@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
 
 /** @implements Arrayable<String, mixed> */
-final class Headers implements Arrayable
+class Headers implements Arrayable
 {
     /**
      * @param Collection<string, mixed> $headers

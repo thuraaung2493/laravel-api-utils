@@ -24,7 +24,6 @@
   "require": {
     "php": "^8.2",
     "illuminate/support": "*",
-    "nunomaduro/mock-final-classes": "^1.2",
     "thecodingmachine/safe": "^2.5"
   },
   "require-dev": {

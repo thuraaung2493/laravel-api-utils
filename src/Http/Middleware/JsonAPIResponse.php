@@ -13,7 +13,7 @@ use Thuraaung\APIUtils\Http\Headers\Headers;
 
 use function explode;
 
-final class JsonAPIResponse
+class JsonAPIResponse
 {
     /**
      * Handle an incoming request.
@@ -33,7 +33,7 @@ final class JsonAPIResponse
                 ->contentType(ContentType::JSON);
         }
 
-        if ($request->isJson() && ! $this->isImageContentType($response)) {
+        if ($request->isJson() && !$this->isImageContentType($response)) {
             $response->headers->add(
                 headers: $headers->toArray(),
             );

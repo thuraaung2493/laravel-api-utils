@@ -7,7 +7,6 @@ namespace Thuraaung\APIUtils\Http\Responses\API;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\PaginatedResourceResponse;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use Thuraaung\APIUtils\Http\Responses\Status;
@@ -21,7 +20,7 @@ use Thuraaung\APIUtils\Http\Responses\Status;
  *     "status": 200,
  * }
  */
-final class PaginatedResponse implements Responsable
+class PaginatedResponse implements Responsable
 {
     public function __construct(
         private AnonymousResourceCollection|ResourceCollection $resource,
@@ -34,7 +33,7 @@ final class PaginatedResponse implements Responsable
      * Create an HTTP response that represents the object.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function toResponse($request): JsonResponse
     {
