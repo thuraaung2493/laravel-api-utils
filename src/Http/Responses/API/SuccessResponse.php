@@ -20,7 +20,7 @@ use Thuraaung\APIUtils\Http\Responses\Status;
  *     "status": 200,
  * }
  */
-final class SuccessResponse implements Responsable
+class SuccessResponse implements Responsable
 {
     public function __construct(
         private JsonResource|AnonymousResourceCollection|ResourceCollection $resource,
@@ -33,7 +33,7 @@ final class SuccessResponse implements Responsable
      * Create an HTTP response that represents the object.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function toResponse($request): JsonResponse
     {

@@ -77,7 +77,7 @@ describe('APIExceptionsHandler::class', function (): void {
     });
 });
 
-final class Handler extends APIExceptionsHandler
+class Handler extends APIExceptionsHandler
 {
     protected function isJsonRequest(): bool
     {

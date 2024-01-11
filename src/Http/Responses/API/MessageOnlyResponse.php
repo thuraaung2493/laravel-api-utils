@@ -18,7 +18,7 @@ use function response;
  *     "status": 500,
  * }
  */
-final class MessageOnlyResponse implements Responsable
+class MessageOnlyResponse implements Responsable
 {
     public function __construct(
         private string|null $message = 'Success.',
@@ -30,7 +30,7 @@ final class MessageOnlyResponse implements Responsable
      * Create an HTTP response that represents the object.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function toResponse($request): JsonResponse
     {

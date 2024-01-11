@@ -10,7 +10,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
-final class Response
+class Response
 {
     private string $title = 'Failed!';
 

@@ -12,7 +12,7 @@ use Thuraaung\APIUtils\Http\Headers\Headers;
 
 use function Safe\gzencode;
 
-final class GzipEncodingResponse
+class GzipEncodingResponse
 {
     /**
      * Handle an incoming request.

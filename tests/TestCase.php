@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Thuraaung\APIUtils\LaravelAPIUtilsServiceProvider;
 
-final class TestCase extends BaseTestCase
+class TestCase extends BaseTestCase
 {
     protected function getPackageProviders($app): array
     {

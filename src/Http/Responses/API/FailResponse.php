@@ -21,7 +21,7 @@ use function response;
  *     "status": 500,
  * }
  */
-final class FailResponse implements Responsable
+class FailResponse implements Responsable
 {
     public function __construct(
         private string|null $title = 'Failed!',
@@ -35,7 +35,7 @@ final class FailResponse implements Responsable
      * Create an HTTP response that represents the object.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function toResponse($request): JsonResponse
     {

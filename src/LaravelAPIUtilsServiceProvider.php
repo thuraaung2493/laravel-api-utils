@@ -6,7 +6,7 @@ namespace Thuraaung\APIUtils;
 
 use Illuminate\Support\ServiceProvider;
 
-final class LaravelAPIUtilsServiceProvider extends ServiceProvider
+class LaravelAPIUtilsServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
