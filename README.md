@@ -9,6 +9,7 @@
     -   [Usage](#usage)
         -   [Responses](#responses)
             -   [API Success JSON Response Format.](#api-success-json-response-format)
+            -   [API Paginated JSON Response Format.](#api-paginated-json-response-format)
             -   [A JSON Response Format for API Errors.](#a-json-response-format-for-api-errors)
             -   [A JSON Response Format for API Messages Only](#a-json-response-format-for-api-messages-only)
         -   [Enums](#enums)
@@ -25,7 +26,7 @@ This package contains many utility APIs that assist in API creation.
 Require this package with composer using the following command:
 
 ```bash
-composer require thuraaung2493/laravel-api-utils@dev-main
+composer require thuraaung2493/laravel-api-utils
 ```
 
 ## Publish the config file
@@ -43,12 +44,14 @@ php artisan vendor:publish --provider="Thuraaung\APIUtils\LaravelAPIUtilsService
 | Class                                                            | Description                                |
 | ---------------------------------------------------------------- | ------------------------------------------ |
 | Thuraaung\APIUtils\Http\Responses\API\SuccessResponse::class     | It returns json response for success.      |
+| Thuraaung\APIUtils\Http\Responses\API\PaginatedResponse::class   | It returns json response for pagination.   |
 | Thuraaung\APIUtils\Http\Responses\API\FailResponse::class        | It returns json response for fail.         |
 | Thuraaung\APIUtils\Http\Responses\API\MessageOnlyResponse::class | It returns json response for message-only. |
 | Thuraaung\APIUtils\Http\Responses\API\Response::class            | API Utils Responses Class.                 |
 
 ```php
   use Thuraaung\APIUtils\Http\Responses\API\SuccessResponse;
+  use Thuraaung\APIUtils\Http\Responses\API\PaginatedResponse;
   use Thuraaung\APIUtils\Http\Responses\API\FailResponse;
   use Thuraaung\APIUtils\Http\Responses\API\MessageOnlyResponse;
   use Thuraaung\APIUtils\Http\Responses\API\Response;
@@ -56,6 +59,10 @@ php artisan vendor:publish --provider="Thuraaung\APIUtils\LaravelAPIUtilsService
   // API Success Response with resource data.
   return new SuccessResponse($userResource); // OR
   return Response::of()->sendSuccess($userResource);
+
+  // API Success Response with resource data.
+  return new PaginatedResponse($userPaginationResource); // OR
+  return Response::of()->paginated($userPaginationResource);
 
   // API Fail Response with errors.
   return new FailResponse(errors: ['email' => 'Email is invalid.']); // OR
@@ -73,6 +80,18 @@ php artisan vendor:publish --provider="Thuraaung\APIUtils\LaravelAPIUtilsService
 ```json
 {
     "data": "resource",
+    "message": "Success.",
+    "status": 200
+}
+```
+
+#### API Paginated JSON Response Format.
+
+```json
+{
+    "data": "resource",
+    "links": {},
+    "meta": {},
     "message": "Success.",
     "status": 200
 }

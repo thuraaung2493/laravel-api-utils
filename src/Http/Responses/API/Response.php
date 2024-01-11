@@ -56,6 +56,18 @@ final class Response
     /**
      * Send a JSON Response for API Success.
      */
+    public function paginated(AnonymousResourceCollection|ResourceCollection $resource): PaginatedResponse
+    {
+        return new PaginatedResponse(
+            resource: $resource,
+            message: $this->message ?? 'Success.',
+            status: $this->status ?? Status::OK,
+        );
+    }
+
+    /**
+     * Send a JSON Response for API Success.
+     */
     public function sendSuccess(JsonResource|AnonymousResourceCollection|ResourceCollection $resource): SuccessResponse
     {
         return new SuccessResponse(
