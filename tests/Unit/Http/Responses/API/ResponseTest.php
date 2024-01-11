@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Pagination\Paginator;
 use Thuraaung\APIUtils\Http\Responses\Status;
 use Thuraaung\APIUtils\Http\Responses\API\Response;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -139,5 +140,77 @@ it('can create a message-only json response with custom message and status', fun
         ->toMatchObject([
             'message' => 'Created successful.',
             'status' => Status::CREATED->value,
+        ]);
+});
+
+it('can create a paginated json response', function (): void {
+    $response = Response::of()
+        ->paginated(new ResourceCollection(new Paginator([], 1, 1)))
+        ->toResponse(Request::create('/'));
+
+    expect($response)
+        ->toBeInstanceOf(JsonResponse::class)
+        ->and($response->status())
+        ->toEqual(Status::OK->value)
+        ->and($response->headers->all())
+        ->toBeArray();
+
+    $links = new stdClass();
+    $links->first = '/?page=1';
+    $links->last = null;
+    $links->prev = null;
+    $links->next = null;
+
+    $meta = new stdClass();
+    $meta->current_page = 1;
+    $meta->from = null;
+    $meta->path = '/';
+    $meta->per_page = 1;
+    $meta->to = null;
+
+    expect($response->getData())
+        ->toMatchObject([
+            'data' => [],
+            'links' => $links,
+            'meta' => $meta,
+            'message' => 'Success.',
+            'status' => Status::OK->value,
+        ]);
+});
+
+it('can create a paginated json response with custom message and status', function (): void {
+    $response = Response::of()
+        ->message('Filter successful.')
+        ->status(Status::OK)
+        ->paginated(new ResourceCollection(new Paginator([], 1, 1)))
+        ->toResponse(Request::create('/'));
+
+    expect($response)
+        ->toBeInstanceOf(JsonResponse::class)
+        ->and($response->status())
+        ->toEqual(Status::OK->value)
+        ->and($response->headers->all())
+        ->toBeArray();
+
+    $links = new stdClass();
+    $links->first = '/?page=1';
+    $links->last = null;
+    $links->prev = null;
+    $links->next = null;
+
+    $meta = new stdClass();
+    $meta->current_page = 1;
+    $meta->from = null;
+    $meta->path = '/';
+    $meta->per_page = 1;
+    $meta->to = null;
+
+    expect($response->getData())
+        ->toMatchObject([
+            'data' => [],
+            'links' => $links,
+            'meta' => $meta,
+            'message' => 'Filter successful.',
+            'status' => Status::OK->value,
         ]);
 });
