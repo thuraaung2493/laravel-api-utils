@@ -17,7 +17,7 @@ return [
 
             'Keep-Alive' => 'timeout=5, max=100',
 
-            'X-Vapor-Base64-Encode' => 'True',
+            'X-Vapor-Base64-Encode' => 'True'
         ],
 
     ],

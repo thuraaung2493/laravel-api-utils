@@ -16,8 +16,7 @@ class Headers implements Arrayable
      */
     private function __construct(
         private Collection $headers,
-    ) {
-    }
+    ) {}
 
     /**
      * Create default headers.
@@ -109,6 +108,8 @@ class Headers implements Arrayable
         return $this->headers->map(function (mixed $value) {
             if ($value instanceof BackedEnum) {
                 return $value->value;
+            } else {
+                return $value;
             }
             return $value;
         })->toArray();

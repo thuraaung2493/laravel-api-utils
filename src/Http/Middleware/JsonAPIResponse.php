@@ -18,7 +18,7 @@ class JsonAPIResponse
     /**
      * Handle an incoming request.
      *
-     * @param  Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  Closure(Request): (Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
@@ -33,7 +33,7 @@ class JsonAPIResponse
                 ->contentType(ContentType::JSON);
         }
 
-        if ($request->isJson() && !$this->isImageContentType($response)) {
+        if ($request->isJson() && ! $this->isImageContentType($response)) {
             $response->headers->add(
                 headers: $headers->toArray(),
             );
